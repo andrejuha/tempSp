@@ -8,7 +8,7 @@ namespace AdasoftData
 {
     public class ZoznamProjektov<ProjectItem> : AdDocument
     {  
-        IEnumerable<ProjectItem> Items { get; set; }
+        public IEnumerable<ProjectItem> Items { get; set; }
         public string  Xml { get; set; }
 
         public string Path { get; set; }

@@ -8,7 +8,7 @@ using AdasoftData;
 
 namespace AdasoftBussines.DataProvider
 {
-    class DataProvider<XmlProjectDocumentReader> : DataProviderBase<DocumentReader>, IDataProvider
+   public class DataProvider<XmlProjectDocumentReader> : DataProviderBase<DocumentReader>, IDataProvider
     {
         public override AdDocument GetDocument()
         {

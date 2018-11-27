@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AdasoftBussines.Data;
+using AdasoftBussines.DataProvider;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,17 @@ namespace AdasoftSpravaProjektov.Pages
 {
     public partial class ZoznamProjForm : Form
     {
+        IDataProvider _dataProvider = null;
         public ZoznamProjForm()
         {
             InitializeComponent();
+            _dataProvider = new DataProvider<XmlProjectDocumentReader>();
+        }
+
+        public ZoznamProjForm(IDataProvider dataProvider)
+        {
+            InitializeComponent();
+            _dataProvider = dataProvider;
         }
 
         private void ZoznamProjForm_Load(object sender, EventArgs e)
@@ -30,6 +40,31 @@ namespace AdasoftSpravaProjektov.Pages
             {
                 logForm.Close();
             }
+        }
+
+        private void InitData()
+        {
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

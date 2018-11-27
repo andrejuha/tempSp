@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ucEditProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucEditProject.Designer.cs">
+      <DependentUpon>ucEditProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\ucEditProject.resx">
+      <DependentUpon>ucEditProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,8 +121,16 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Controls\" />
+    <ProjectReference Include="..\AdasoftBussines\AdasoftBussines.csproj">
+      <Project>{c4e98372-f66a-49ba-9924-e750322c9904}</Project>
+      <Name>AdasoftBussines</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdasoftData\AdasoftData.csproj">
+      <Project>{7e458f05-5678-4602-a140-689e1a1e7a24}</Project>
+      <Name>AdasoftData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

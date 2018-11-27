@@ -2,7 +2,7 @@
 
 namespace AdasoftBussines.Data
 {
-    abstract class DocumentReader : IDocumentReader
+   public abstract class DocumentReader : IDocumentReader
     {
 
         public abstract AdDocument GetDocument ();
