@@ -12,22 +12,22 @@ using System.IO;
 
 namespace AdasoftBussines.Data
 {
-    public class XmlProjectDocumentReader : DocumentReader,IDocumentReader
+    public class XmlProjectDocumentReader : DocumentReader, IDocumentReader
     {
         string path { get; set; }
         public override AdDocument GetDocument()
         {
-            ZoznamProjektov<ProjectItem>  zoznam = new ZoznamProjektov<ProjectItem>();
+            ZoznamProjektov<ProjectItem> zoznam = new ZoznamProjektov<ProjectItem>();
             List<ProjectItem> listItems = new List<ProjectItem>();
             try
             {
                 XElement xelement = XElement.Load(path);
                 IEnumerable<XElement> items = xelement.Elements();
-               
+
                 foreach (var item in items)
                 {
                     int _id = int.Parse(item.Element("id").Value);
-                    string  _abreviation = item.Element("abreviation").Value;
+                    string _abreviation = item.Element("abreviation").Value;
                     string _customer = item.Element("customer").Value;
                     string _name = item.Element("name").Value;
 
@@ -47,7 +47,7 @@ namespace AdasoftBussines.Data
             }
             zoznam.Items = listItems;
             zoznam.Path = path;
-            
+
             return (AdDocument)(zoznam);
         }
 
@@ -77,7 +77,7 @@ namespace AdasoftBussines.Data
                 }
                 xDoc.Add(root);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
             }
@@ -100,9 +100,9 @@ namespace AdasoftBussines.Data
                     xDoc.Save(path);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             { }
         }
     }
-    }
 }
+
