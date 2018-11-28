@@ -14,7 +14,11 @@ namespace AdasoftBussines.Data
 {
     public class XmlProjectDocumentReader : DocumentReader, IDocumentReader
     {
-        string path { get; set; }
+        public XmlProjectDocumentReader()
+        {
+
+        }
+        string path { get; set; } = @"C:\Users\User\Documents\visual studio 2015\Projects\AdasoftSpravaProjektov\projects.xml";
         public override AdDocument GetDocument()
         {
             ZoznamProjektov<ProjectItem> zoznam = new ZoznamProjektov<ProjectItem>();
@@ -26,8 +30,8 @@ namespace AdasoftBussines.Data
 
                 foreach (var item in items)
                 {
-                    int _id = int.Parse(item.Element("id").Value);
-                    string _abreviation = item.Element("abreviation").Value;
+                    int _id = int.Parse(item.Attribute("id").Value.Replace("prj",""));
+                    string _abreviation = item.Element("abbreviation").Value;
                     string _customer = item.Element("customer").Value;
                     string _name = item.Element("name").Value;
 

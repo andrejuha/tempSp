@@ -33,6 +33,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.ucEditProject1 = new AdasoftSpravaProjektov.Controls.ucEditProject();
             this.SuspendLayout();
             // 
             // treeView1
@@ -48,15 +49,15 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(698, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(725, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(336, 13);
+            this.btnEdit.Location = new System.Drawing.Point(336, 29);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.Size = new System.Drawing.Size(92, 23);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -64,9 +65,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(336, 61);
+            this.btnSave.Location = new System.Drawing.Point(336, 77);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(92, 23);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -74,19 +75,30 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(336, 125);
+            this.btnDelete.Location = new System.Drawing.Point(336, 128);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(92, 23);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // ucEditProject1
+            // 
+            this.ucEditProject1.ItemAbbreviation = "";
+            this.ucEditProject1.ItemCustomer = "";
+            this.ucEditProject1.ItemName = "";
+            this.ucEditProject1.Location = new System.Drawing.Point(336, 181);
+            this.ucEditProject1.Name = "ucEditProject1";
+            this.ucEditProject1.Size = new System.Drawing.Size(282, 111);
+            this.ucEditProject1.TabIndex = 5;
+            // 
             // ZoznamProjForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 391);
+            this.ClientSize = new System.Drawing.Size(725, 391);
+            this.Controls.Add(this.ucEditProject1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnEdit);
@@ -108,5 +120,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
+        private Controls.ucEditProject ucEditProject1;
     }
 }

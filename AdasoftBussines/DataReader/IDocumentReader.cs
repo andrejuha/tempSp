@@ -2,7 +2,7 @@
 
 namespace AdasoftBussines.Data
 {
-    interface IDocumentReader
+    public interface IDocumentReader
     {
         AdDocument GetDocument();
          void SaveDocument(AdDocument document);

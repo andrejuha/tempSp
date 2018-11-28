@@ -1,5 +1,7 @@
 ﻿using AdasoftBussines.Data;
 using AdasoftBussines.DataProvider;
+using AdasoftData;
+using AdasoftData.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +17,11 @@ namespace AdasoftSpravaProjektov.Pages
     public partial class ZoznamProjForm : Form
     {
         IDataProvider _dataProvider = null;
+        ZoznamProjektov<ProjectItem> _zoznam = null;
         public ZoznamProjForm()
         {
             InitializeComponent();
-            _dataProvider = new DataProvider<XmlProjectDocumentReader>();
+            _dataProvider = new DataProvider<XmlProjectDocumentReader>(new XmlProjectDocumentReader() );
         }
 
         public ZoznamProjForm(IDataProvider dataProvider)
@@ -40,6 +43,18 @@ namespace AdasoftSpravaProjektov.Pages
             {
                 logForm.Close();
             }
+
+            AdDocument adDocument= _dataProvider.GetDocument();
+
+            _zoznam = (ZoznamProjektov<ProjectItem>)adDocument;
+
+            foreach (ProjectItem item in _zoznam.Items)
+            {
+            
+               TreeNode tn= treeView1.Nodes.Add(item.Id.ToString() );
+                tn.Tag = item.Id-1;
+
+            }
         }
 
         private void InitData()
@@ -49,7 +64,16 @@ namespace AdasoftSpravaProjektov.Pages
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            if (treeView1.SelectedNode!=null)
+            {
+                List<ProjectItem> listProjects = _zoznam.Items.ToList<ProjectItem>();
+                int index= (int)treeView1.SelectedNode.Tag;
+                ucEditProject1.ItemId= listProjects[index].Id;
+                ucEditProject1.ItemAbbreviation = listProjects[index].Abreviation;
+                ucEditProject1.ItemCustomer = listProjects[index].Customer;
+                ucEditProject1.ItemName = listProjects[index].Name;
 
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

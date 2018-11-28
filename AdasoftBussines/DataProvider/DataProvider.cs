@@ -8,16 +8,22 @@ using AdasoftData;
 
 namespace AdasoftBussines.DataProvider
 {
-   public class DataProvider<XmlProjectDocumentReader> : DataProviderBase<DocumentReader>, IDataProvider
+   public class DataProvider<T> : DataProviderBase<DocumentReader>, IDataProvider where T : IDocumentReader
     {
+       T _projectDocumentReader ;
+
+        public DataProvider(T ProjectDocumentReader)
+        {
+            _projectDocumentReader = ProjectDocumentReader;
+        }
         public override AdDocument GetDocument()
         {
-            throw new NotImplementedException();
+          return _projectDocumentReader.GetDocument();
         }
 
         public override void SaveDocument(AdDocument document)
         {
-            throw new NotImplementedException();
+            _projectDocumentReader.SaveDocument(document);
         }
     }
 }

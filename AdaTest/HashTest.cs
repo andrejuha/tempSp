@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AdaSecure;
+
 using System.Security.Cryptography;
 
 namespace AdaTest

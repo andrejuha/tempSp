@@ -67,10 +67,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdaSecure\AdaSecure.csproj">
-      <Project>{234618f7-542b-4dbc-818a-6c86a648f619}</Project>
-      <Name>AdaSecure</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AdasoftBussines\AdasoftBussines.csproj">
       <Project>{c4e98372-f66a-49ba-9924-e750322c9904}</Project>
       <Name>AdasoftBussines</Name>
